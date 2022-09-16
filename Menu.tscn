@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://successionwars_title_graphic.png" type="Texture" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=2]
+
+[node name="MenuRoot" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 357.0
+margin_right = -357.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 0.423
+margin_bottom = 0.199997
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -46.0
+margin_bottom = 46.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" type="Button" parent="Panel/VBoxContainer"]
+margin_right = 310.0
+margin_bottom = 20.0
+text = "New Game"
+
+[node name="LoadGame" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 24.0
+margin_right = 310.0
+margin_bottom = 44.0
+text = "Load Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 48.0
+margin_right = 310.0
+margin_bottom = 68.0
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 72.0
+margin_right = 310.0
+margin_bottom = 92.0
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Panel/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

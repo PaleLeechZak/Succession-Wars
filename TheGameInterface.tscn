@@ -1,0 +1,196 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Interface.gd" type="Script" id=1]
+
+[sub_resource type="InputEventAction" id=1]
+action = "Pause"
+pressed = true
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="ButtonGroup" id=3]
+
+[sub_resource type="InputEventAction" id=4]
+action = "Speed_2"
+pressed = true
+
+[sub_resource type="ShortCut" id=5]
+shortcut = SubResource( 4 )
+
+[sub_resource type="InputEventAction" id=6]
+action = "Speed_3"
+pressed = true
+
+[sub_resource type="ShortCut" id=7]
+shortcut = SubResource( 6 )
+
+[sub_resource type="InputEventAction" id=8]
+action = "Speed_4"
+pressed = true
+
+[sub_resource type="ShortCut" id=9]
+shortcut = SubResource( 8 )
+
+[sub_resource type="InputEventAction" id=10]
+action = "Speed_5"
+pressed = true
+
+[sub_resource type="ShortCut" id=11]
+shortcut = SubResource( 10 )
+
+[node name="Interface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.01
+anchor_top = 0.85
+anchor_right = 0.315
+anchor_bottom = 0.983
+margin_left = -0.240001
+margin_top = -0.27887
+margin_right = 0.439941
+margin_bottom = -0.0788574
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money Label" type="Label" parent="Panel"]
+anchor_bottom = 0.175
+margin_right = 20.0
+margin_bottom = -9.53674e-07
+text = "MC$:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="Panel"]
+anchor_bottom = 0.175
+margin_top = 16.0
+margin_right = 32.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed Label" type="Label" parent="Panel"]
+anchor_top = 0.6
+anchor_bottom = 0.775
+margin_right = 32.0
+margin_bottom = -3.8147e-06
+text = "Speed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyAmount" type="Label" parent="Panel"]
+anchor_left = 0.102
+anchor_right = 0.102
+anchor_bottom = 0.175
+margin_left = 0.0739975
+margin_right = 20.074
+margin_bottom = -9.53674e-07
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed0" type="CheckBox" parent="Panel"]
+anchor_top = 0.714
+anchor_right = 0.058
+anchor_bottom = 1.014
+margin_top = 0.0249786
+margin_right = 17.846
+margin_bottom = 0.024971
+shortcut = SubResource( 2 )
+group = SubResource( 3 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed1" type="CheckBox" parent="Panel"]
+anchor_top = 0.714
+anchor_right = 0.058
+anchor_bottom = 1.014
+margin_left = 32.0
+margin_top = 0.0249939
+margin_right = 49.846
+margin_bottom = 0.0249863
+shortcut = SubResource( 2 )
+group = SubResource( 3 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed2" type="CheckBox" parent="Panel"]
+anchor_left = 0.102
+anchor_top = 0.714
+anchor_right = 0.16
+anchor_bottom = 1.014
+margin_left = 32.074
+margin_top = 0.0249939
+margin_right = 49.92
+margin_bottom = 0.0249863
+shortcut = SubResource( 5 )
+group = SubResource( 3 )
+text = "2"
+
+[node name="Speed3" type="CheckBox" parent="Panel"]
+anchor_left = 0.204
+anchor_top = 0.714
+anchor_right = 0.262
+anchor_bottom = 1.0
+margin_left = 32.148
+margin_top = 0.0249939
+margin_right = 49.994
+margin_bottom = 1.14499
+shortcut = SubResource( 7 )
+group = SubResource( 3 )
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Speed4" type="CheckBox" parent="Panel"]
+anchor_left = 0.307
+anchor_top = 0.714
+anchor_right = 0.364
+anchor_bottom = 1.0
+margin_left = 31.909
+margin_top = 0.0249939
+margin_right = 50.068
+margin_bottom = 1.14499
+shortcut = SubResource( 9 )
+group = SubResource( 3 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed5" type="CheckBox" parent="Panel"]
+anchor_left = 0.409
+anchor_top = 0.714
+anchor_right = 0.466
+anchor_bottom = 1.0
+margin_left = 31.983
+margin_top = 0.0249939
+margin_right = 50.142
+margin_bottom = 1.14499
+shortcut = SubResource( 11 )
+group = SubResource( 3 )
+text = "5"
+
+[connection signal="button_down" from="Panel/Speed0" to="." method="_on_Speed0_button_down"]
+[connection signal="button_down" from="Panel/Speed1" to="." method="_on_Speed1_button_down"]
+[connection signal="button_down" from="Panel/Speed2" to="." method="_on_Speed2_button_down"]
+[connection signal="button_down" from="Panel/Speed3" to="." method="_on_Speed3_button_down"]
+[connection signal="button_down" from="Panel/Speed4" to="." method="_on_Speed4_button_down"]
+[connection signal="button_down" from="Panel/Speed5" to="." method="_on_Speed5_button_down"]
